@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "/app/scss/variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f2f2f6;
+
+  .container-fluid {
+    width: 100%;
+    max-width: 1272px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn-primary {
+    height: 2.8rem;
+    padding: .6rem;
+    color: white;
+    font-size: $text-sm;
+    border-radius: .75rem;
+    background-color: $primary;
+    transition: all .2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:active {
+      opacity: .75;
+    }
+    @media (min-width: 992px) {
+      font-size: 1rem;
+    }
+  }
+
+  .btn-outline-primary {
+    height: 2.8rem;
+    padding: .6rem;
+    color: $primary;
+    font-size: $text-sm;
+    border-radius: .75rem;
+    border: 1px solid $primary;
+    transition: all .2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+      background-color: $primary-light;
+    }
+    &:active {
+      opacity: .75;
+    }
+    @media (min-width: 992px) {
+      font-size: 1rem;
+    }
+  }
+
+  // inputs
+  input, textarea, .form_control {
+    background-color: #f3f4f6;
+    border: 1px solid $gray-200;
+    height: 2.8rem;
+    padding: .75rem;
+    &:hover {
+      outline-width: 1px;
+      outline-style: solid;
+      outline-color: $primary;
+      border-color: transparent;
+    }
+    &:focus {
+      outline-width: .13rem;
+      outline-style: solid;
+      outline-color: $primary;
+      border-color: transparent;
+    }
+  }
+
+  // swiper
+  .swiper-pagination {
+    .swiper-pagination-bullet {
+      background-color: $primary;
+      width: .5rem;
+      height: .5rem;
+      border-radius: .25rem;
+      transition: all .15s ease;
+    }
+    .swiper-pagination-bullet-active {
+      width: 1.25em;
+    }
+  }
+}

@@ -1,0 +1,74 @@
+@import "/app/scss/variables";
+
+.footer {
+	section {
+		ul {
+			li, h2 {
+				a {
+					padding: .4rem;
+					cursor: pointer;
+					color: #616161;
+					transition: all .15s;
+
+					&:hover {
+						color: $primary;
+					}
+				}	
+			}
+			h2 {
+				font-weight: 500;
+				a {
+					color: black;
+				}
+			}
+
+			li {
+				margin-top: 16px;
+
+				.contact_us_btn{
+					color: white;
+					background-color: $primary;
+					border-radius: 2rem;
+					padding: .6rem .8rem;
+					&:hover {
+						color: white;
+					}
+				}
+			}
+		}
+	}
+
+	
+
+	.section_4 {
+		.container_btn {
+			display: flex;
+			justify-content: start;
+			align-items: center;
+		}
+
+		.social_media {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			column-gap: .5rem;
+
+			a {
+				border-radius: .75rem;
+				min-width: 36px;
+				min-height: 36px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: $primary;
+				svg {
+					width: 65%;
+					height: 65%;
+					color: white;
+				}
+			}
+		}
+	}
+}
+
+
