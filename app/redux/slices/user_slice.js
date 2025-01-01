@@ -18,10 +18,10 @@ export const user_slice = createSlice({
 	reducers: {
 		set_token: (state, action) => {
 			state.user = {
-				name: null,
-				last_name: null,
-				phone_number: null,
-				email: null,
+				first_name: "Arsham",
+				last_name: "Naghash",
+				phone_number: "09335593213",
+				email: "arsham.naghash@yahoo.com",
 				token: action.payload,
 				favorits: [],
 			}

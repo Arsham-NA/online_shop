@@ -28,7 +28,7 @@ const Header = () => {
 			</div>
 
 			{/* navbar */}
-			<nav className="navlinks w-3/4 hidden lg:flex justify-center items-center ">
+			<nav className="navlinks hidden lg:w-2/4 lg:flex justify-center items-center">
 				<ul className="flex justify-center items-center gap-x-10 text-nowrap font-medium">
 					<li><Link href={"/products"} className={pathname === "/products" ? "active" : undefined}>Products</Link></li>
 					<li><Link href={"/about-us"} className={pathname === "/about-us" ? "active" : undefined}>About us</Link></li>
@@ -38,7 +38,8 @@ const Header = () => {
 			</nav>
 
 			{/* right section */}
-			<div className="hidden w-2/4 lg:w-1/4 lg:flex justify-end items-center">
+			<div className="hidden w-2/4 lg:w-1/4 lg:flex justify-end items-center gap-x-3">
+			<HeaderSearchBar />
 				<div className="p-1 border border-gray-300 rounded-xl flex justify-center items-center gap-x-2 h-[50px]">
 					{
 						user !== null ? (

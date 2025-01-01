@@ -1,7 +1,13 @@
+import DashboardDesktop from "./components/dashboard_desktop";
+import DashboardMobile from "./components/dashboard_mobile";
+
 const Dashboard = () => {
+
 	return (
-		<main className="w-full h-screen flex justify-center items-center">
-			<h1 className="text-xl lg:text-3xl font-semibold">Dashboard</h1>
+		<main className="container-fluid mt-5 px-3">
+			<h1 className="hidden">dashbaord</h1>
+			<DashboardDesktop />
+			<DashboardMobile />
 		</main>
 	);
 };

@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const ProductInfo = ({data}) => {
 
-	const [selected, setSelected] = useState("photos");
+	const [selected, setSelected] = useState("description");
 
 	const data_details = [
 		{

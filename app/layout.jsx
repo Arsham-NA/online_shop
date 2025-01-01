@@ -1,4 +1,3 @@
-import localFont from "next/font/local";
 import "./_globals.scss";
 import { Inter } from "next/font/google";
 import NextuiProvider from "./nextui/nextui_provider";
@@ -19,7 +18,7 @@ import BackToTop from "./components/back_to_top";
 //   weight: "100 900",
 // });
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], weight: ["100", "200", "300", "400", "500", "600", "700", "900"]});
 
 export const metadata = {
   title: "Online Shop",
