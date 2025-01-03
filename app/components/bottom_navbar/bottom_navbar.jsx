@@ -40,7 +40,7 @@ const BottomNavbar = () => {
 					<span>Login</span>
 				</Link>
 					) : (
-				<Dropdown>
+				<Dropdown backdrop="blur">
 					<DropdownTrigger>
 					<div className={`flex flex-col justify-center items-center gap-y-2 cursor-pointer ${pathname === "/profile/dashboard" ? "text-primary" : undefined}`}>
 						<AiOutlineUser className="min-w-[22px] min-h-[22px]"/>
@@ -55,7 +55,6 @@ const BottomNavbar = () => {
 				</Dropdown>
 				)
 			}
-			
 		</div>
 	);
 };

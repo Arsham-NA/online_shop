@@ -43,7 +43,7 @@ const Header = () => {
 				<div className="p-1 border border-gray-300 rounded-xl flex justify-center items-center gap-x-2 h-[50px]">
 					{
 						user !== null ? (
-							<Dropdown>
+							<Dropdown backdrop="blur">
 								<DropdownTrigger>
 									<div className="flex justify-center items-center w-[50px] px-4 py-2 rounded-lg hover:bg-gray-200">
 										<AiOutlineUser className="min-w-6 min-h-6 cursor-pointer hover:scale-110 duration-150"/>

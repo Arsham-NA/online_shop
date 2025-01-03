@@ -22,6 +22,7 @@ export const user_slice = createSlice({
 				last_name: "Naghash",
 				phone_number: "09335593213",
 				email: "arsham.naghash@yahoo.com",
+				address: [],
 				token: action.payload,
 				favorits: [],
 			}
@@ -39,6 +40,16 @@ export const user_slice = createSlice({
 			}
 			localStorage.setItem("user", JSON.stringify(state.user));
 		},
+
+		set_address: (state, action) => {
+			state.user.address = [...state.user.address, action.payload];
+			localStorage.setItem("user", JSON.stringify(state.user));
+		},
+
+		delete_address: (state, action) => {
+			state.user.address = state.user.address.filter((item, index) => index !== action.payload);
+			localStorage.setItem("user", JSON.stringify(state.user));
+		},
 		
 		logout: () => {
 			localStorage.removeItem("user");
@@ -48,4 +59,4 @@ export const user_slice = createSlice({
 });
 
 export default user_slice.reducer;
-export const { set_token, logout, set_favorits } = user_slice.actions;
+export const { set_token, logout, set_favorits, set_address, delete_address } = user_slice.actions;

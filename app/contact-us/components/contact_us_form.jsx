@@ -24,7 +24,7 @@ const ContactUsForm = () => {
 			</div>
 
 			<div className="mb-5">
-				<textarea type="text" name="message" className="w-full h-full  rounded-xl" placeholder="Write your message here..." rows={5}/>
+				<textarea name="message" className="w-full h-full rounded-xl" placeholder="Write your message here..." rows={5}/>
 			</div>
 
 			<div className="w-full">

@@ -32,9 +32,9 @@ export const dashboard_list = [
 	},
 	{
 		id: 4,
-		title: "Location",
+		title: "Address",
 		icon: <SlLocationPin className="w-[20px] h-[20px]"/>,
-		link: "/profile/dashboard"
+		link: "/profile/address"
 	},
 	{
 		id: 5,

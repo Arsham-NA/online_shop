@@ -21,8 +21,8 @@ const DeleteCartModal = () => {
 									<p>Are you sure?</p>
 								</ModalBody>
 							<ModalFooter>
-								<button className="btn-outline-primary w-[110px]" onClick={onClose}>Close</button>
-								<button className="btn-primary w-[110px]" onClick={(e) => {dispatch(delete_cart()); onClose(e)}}>Delete</button>
+								<button type="button" className="btn-outline-primary w-[110px]" onClick={onClose}>Close</button>
+								<button type="button" className="btn-primary w-[110px]" onClick={() => {dispatch(delete_cart()); onClose()}}>Delete</button>
 							</ModalFooter>
 						</>
 					)}
