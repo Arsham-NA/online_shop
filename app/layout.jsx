@@ -34,7 +34,7 @@ export default function RootLayout({ children }) {
           <ReduxProvider>
             <Header />
             <BackToTop />
-            {children}
+              {children}
             <Footer />
             <BottomNavbar />
           </ReduxProvider>

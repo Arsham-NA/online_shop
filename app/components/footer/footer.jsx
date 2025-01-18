@@ -1,6 +1,7 @@
 import "./_footer.scss";
 import Link from "next/link";
 import { BsFacebook, BsGithub, BsInstagram, BsTwitter, BsTelephone } from "react-icons/bs";
+import FooterForm from "./components/footer_form";
 
 
 
@@ -48,15 +49,8 @@ const Footer = () => {
 				</section>
 				<section className="section_4 flex flex-col justify-start items-start gap-y-5 md:gap-y-9">
 					{/* subscribe_section */}
-					<h5 className=" font-semibold text-lg">Subscribe To Get Updates</h5>
-					<div className="w-full flex flex-col xl:flex-row justify-start items-start gap-y-3 gap-x-3">
-						<div className="w-full xl:w-9/12">
-							<input type="email" name="input_subscribe" className="w-full rounded-xl" placeholder="Email Address"/>
-						</div>
-						<div className="w-full xl:w-5/12">
-							<button className="btn-outline-primary w-full">Subscribe</button>
-						</div>
-					</div>
+					<h2 className=" font-semibold text-lg">Subscribe To Get Updates</h2>
+					<FooterForm />
 
 					{/* follow us */}
 					<div className="w-full">

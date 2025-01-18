@@ -5,39 +5,30 @@ import { BsStarFill } from "react-icons/bs";
 import ProductsLoading from "./components/products_loading";
 import { useRouter } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
-import { add_item } from "../redux/slices/cart_slice";
 import Link from "next/link";
 import { PiHeartFill, PiHeartLight } from "react-icons/pi";
 import { set_favorits } from "../redux/slices/user_slice";
 import Image from "next/image";
 import AddToCartBtn from "@/app/components/btns/add_to_cart_btn";
+import useSWR from "swr";
 
 
 
 
 const Products = () => {
+	
+	const base_url = "https://fakestoreapi.com/products";
+	const fetcher = (url) => axios.get(url).then((res) => res.data); 
 
 	const router = useRouter();
 	const {user} = useSelector((state) => state.user_slice);
 	const dispatch = useDispatch();
-	const [data, setData] = useState([]);
-	const [Is_loading, setIs_loading] = useState(true);
-	const [filter, setFilter] = useState("")
 	const [active_filter, setActive_filter] = useState("");
+	const [url, setUrl] = useState(base_url);
 
-	useEffect(() => {
-		//https://fakestoreapi.com/products
+	//https://fakestoreapi.com/products
 
-		const fetch_data = async() => {
-			setIs_loading(true)
-			await axios.get(`https://fakestoreapi.com/products${filter}`)
-			.then((response) => {
-				setData(response.data);
-				setIs_loading(false);
-			})
-		}
-		fetch_data();
-	}, [filter]);
+	const {data, isLoading, error} = useSWR(url, fetcher);
 
 	//item hayi ke too favorist hast ro check mikone, age bood object item ro mide, age nabood false mide
 	//age user nabood false mide ke favorit ha outline bashan na fill, ke dakhele onclick khode svg favorit check mishe ke age karbar login naboode bera login kone
@@ -58,11 +49,11 @@ const Products = () => {
 			<div className="w-full lg:px-20 px-5 py-5 bg-white rounded-lg mb-5 shadow-sm">
 				<div className="text-2xl lg:text-3xl font-semibold text-center border-b pb-5">filters</div>
 				<div className="pt-5 flex justify-start lg:justify-center items-center gap-x-5 overflow-x-auto pb-4 lg:pb-0">
-					<button className={`btn-outline-primary min-w-[120px] !rounded-full ${active_filter === "" ? "!bg-primary-light" : undefined}`} onClick={() => {setFilter(""); setActive_filter("")}}>All</button>
-					<button className={`btn-outline-primary min-w-[120px] !rounded-full ${active_filter === "mens" ? "!bg-primary-light" : undefined}`} onClick={() => {setFilter("/category/men's clothing"); setActive_filter("mens")}}>Mens</button>
-					<button className={`btn-outline-primary min-w-[120px] !rounded-full ${active_filter === "women" ? "!bg-primary-light" : undefined}`} onClick={() => {setFilter("/category/women's clothing"); setActive_filter("women")}}>Women</button>
-					<button className={`btn-outline-primary min-w-[120px] !rounded-full ${active_filter === "jewels" ? "!bg-primary-light" : undefined}`} onClick={() => {setFilter("/category/jewelery"); setActive_filter("jewels")}}>Jewels</button>
-					<button className={`btn-outline-primary min-w-[120px] !rounded-full ${active_filter === "electronics" ? "!bg-primary-light" : undefined}`} onClick={() => {setFilter("/category/electronics"); setActive_filter("electronics")}}>Electronics</button>
+					<button type="button" className={`btn-outline-primary min-w-[120px] !rounded-full ${active_filter === "" ? "!bg-primary-light" : undefined}`} onClick={() => {setUrl(base_url); setActive_filter("")}}>All</button>
+					<button type="button" className={`btn-outline-primary min-w-[120px] !rounded-full ${active_filter === "mens" ? "!bg-primary-light" : undefined}`} onClick={() => {setUrl(`${base_url}/category/men's clothing`); setActive_filter("mens")}}>Mens</button>
+					<button type="button" className={`btn-outline-primary min-w-[120px] !rounded-full ${active_filter === "women" ? "!bg-primary-light" : undefined}`} onClick={() => {setUrl(`${base_url}/category/women's clothing`); setActive_filter("women")}}>Women</button>
+					<button type="button" className={`btn-outline-primary min-w-[120px] !rounded-full ${active_filter === "jewels" ? "!bg-primary-light" : undefined}`} onClick={() => {setUrl(`${base_url}/category/jewelery`); setActive_filter("jewels")}}>Jewels</button>
+					<button type="button" className={`btn-outline-primary min-w-[120px] !rounded-full ${active_filter === "electronics" ? "!bg-primary-light" : undefined}`} onClick={() => {setUrl(`${base_url}/category/electronics`); setActive_filter("electronics")}}>Electronics</button>
 				</div>
 			</div>
 
@@ -73,7 +64,7 @@ const Products = () => {
 			{/* products list */}
 			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-2 gap-y-3">
 				{
-					Is_loading ? (
+					isLoading ? (
 						<>
 							<ProductsLoading />
 						</>
