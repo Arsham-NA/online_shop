@@ -5,7 +5,7 @@ import { FiShoppingBag } from "react-icons/fi";
 import { AiOutlineUser} from "react-icons/ai";
 import { usePathname } from "next/navigation";
 import { useDispatch, useSelector } from "react-redux";
-import { Badge, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@nextui-org/react";
+import { Badge, Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@heroui/react";
 import { logout } from "@/app/redux/slices/user_slice";
 import { useRouter } from "next/navigation";
 

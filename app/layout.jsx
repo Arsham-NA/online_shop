@@ -1,6 +1,6 @@
 import "./_globals.scss";
 import { Inter } from "next/font/google";
-import NextuiProvider from "./nextui/nextui_provider";
+import HeroUiProvider from "./heroui/heroui_provider";
 import Header from "./components/header/header";
 import BottomNavbar from "./components/bottom_navbar/bottom_navbar";
 import Footer from "./components/footer/footer";
@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       {/* <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}> */}
       <body className={`${inter.className} min-h-screen pb-[80px] lg:pb-0 text-sm lg:text-base !leading-normal`}>
-        <NextuiProvider>
+        <HeroUiProvider>
           <ReduxProvider>
             <Header />
             <BackToTop />
@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
             <Footer />
             <BottomNavbar />
           </ReduxProvider>
-        </NextuiProvider>
+        </HeroUiProvider>
       </body>
     </html>
   );

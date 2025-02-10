@@ -1,5 +1,5 @@
 "use client";
-import { Spinner } from "@nextui-org/react";
+import { Spinner } from "@heroui/react";
 import { useFormik } from "formik";
 import * as yup from "yup";
 

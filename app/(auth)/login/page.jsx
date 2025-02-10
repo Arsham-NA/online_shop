@@ -8,7 +8,7 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { set_token } from "@/app/redux/slices/user_slice";
 import { useRouter } from "next/navigation";
-import { Spinner } from "@nextui-org/react";
+import { Spinner } from "@heroui/react";
 
 const Login = () => {
 

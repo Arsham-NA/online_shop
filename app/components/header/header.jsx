@@ -1,12 +1,12 @@
 "use client";
 import "./_header.scss";
-import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@nextui-org/react";
+import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@heroui/react";
 import Link from "next/link";
 import { AiOutlineUser } from "react-icons/ai";
 import { FiShoppingBag } from "react-icons/fi";
 import { usePathname } from "next/navigation";
 import HeaderSearchBar from "./components/header_search_bar";
-import { Badge } from "@nextui-org/react";
+import { Badge } from "@heroui/react";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "@/app/redux/slices/user_slice";
 import { useRouter } from "next/navigation";

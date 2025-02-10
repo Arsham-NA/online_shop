@@ -2,7 +2,7 @@
 import { SlLocationPin } from "react-icons/sl";
 import { useSelector, useDispatch } from "react-redux";
 import AddNewAddress from "./components/add_new_address";
-import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@nextui-org/react";
+import { Dropdown, DropdownItem, DropdownMenu, DropdownTrigger } from "@heroui/react";
 import { FaTrash, FaCircle } from "react-icons/fa6";
 import { delete_address } from "@/app/redux/slices/user_slice";
 

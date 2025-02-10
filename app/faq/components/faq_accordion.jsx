@@ -1,5 +1,5 @@
 "use client";
-import { Accordion, AccordionItem } from "@nextui-org/react";
+import { Accordion, AccordionItem } from "@heroui/react";
 import { faq_accordion_data } from "./faq_accordion_data";
 import { useState } from "react";
 

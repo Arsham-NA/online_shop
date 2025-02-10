@@ -1,5 +1,5 @@
 "use client";
-import {Modal, ModalContent, ModalHeader, ModalBody, useDisclosure } from "@nextui-org/modal";
+import { Modal, ModalBody, ModalContent, ModalHeader, useDisclosure } from "@heroui/react";
 import SearchBtn from "../../btns/search_btn";
 // import useSWR from "swr";
 import axios from "axios";

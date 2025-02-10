@@ -1,8 +1,9 @@
 "use client";
 import { add_item } from "@/app/redux/slices/cart_slice";
-import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from "@nextui-org/react";
+
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/navigation";
+import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure  } from "@heroui/react";
 
 const AddToCartBtn = ({className, product}) => {
 

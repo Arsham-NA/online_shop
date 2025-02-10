@@ -1,6 +1,6 @@
 "use client";
 import { delete_cart } from "@/app/redux/slices/cart_slice";
-import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure } from "@nextui-org/modal";
+import {Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, useDisclosure } from "@heroui/modal";
 import { useDispatch } from "react-redux";
 
 
